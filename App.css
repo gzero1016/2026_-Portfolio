@@ -177,48 +177,6 @@ button {
   margin-top: 44px;
 }
 
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 80px;
-}
-
-.highlights li {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 24px;
-  border-radius: 16px;
-  background: var(--grey-100);
-}
-
-.highlights strong {
-  font-size: clamp(24px, 2.6vw, 32px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  white-space: nowrap;
-  color: var(--blue);
-}
-
-.highlights span {
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--grey-600);
-}
-
-.highlights li.is-blue {
-  background: var(--blue);
-}
-
-.highlights li.is-blue strong {
-  color: #fff;
-}
-
-.highlights li.is-blue span {
-  color: rgba(255, 255, 255, 0.8);
-}
-
 .hero-in {
   opacity: 0;
   animation: fadeUp 0.8s var(--ease) forwards;
@@ -227,7 +185,6 @@ button {
 .hero-in:nth-child(2) { animation-delay: 0.08s; }
 .hero-in:nth-child(3) { animation-delay: 0.16s; }
 .hero-in:nth-child(4) { animation-delay: 0.24s; }
-.highlights.hero-in { animation-delay: 0.36s; }
 
 /* ===== Section ===== */
 .section {
@@ -285,6 +242,61 @@ button {
 .about-card p {
   line-height: 1.7;
   color: var(--grey-700);
+}
+
+/* ===== Competencies ===== */
+.competencies {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.competency {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--grey-100);
+}
+
+.competency h3 {
+  margin: 4px 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.competency > p {
+  margin-bottom: 24px;
+  line-height: 1.7;
+  color: var(--grey-700);
+}
+
+.competency-proofs {
+  display: grid;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--grey-200);
+}
+
+.competency-proofs li {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.competency-proofs strong {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  white-space: nowrap;
+}
+
+.competency-proofs span {
+  font-size: 15px;
+  color: var(--grey-600);
 }
 
 /* ===== Experience ===== */
@@ -1208,16 +1220,17 @@ button {
 
 /* ===== Responsive ===== */
 @media (max-width: 960px) {
-  .highlights,
   .domains {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .edu-grid,
-  .about-grid {
+  .about-grid,
+  .competencies {
     grid-template-columns: 1fr;
   }
 }
+
 
 @media (max-width: 760px) {
   body {
@@ -1246,10 +1259,16 @@ button {
   }
 
   .about-card,
+  .competency,
   .feature,
   .other,
   .skill {
     padding: 24px;
+  }
+
+  .competency-proofs li {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 
   .exp {
@@ -1292,7 +1311,7 @@ button {
 
 /* ===== Dark theme: 카드는 채우기 대신 얇은 테두리로 구분 ===== */
 .about-card,
-.highlights li,
+.competency,
 .feature,
 .other,
 .skill,
@@ -1309,10 +1328,6 @@ button {
 .chips li,
 .exp-avatar {
   border: 1px solid var(--grey-200);
-}
-
-.highlights li.is-blue {
-  border-color: var(--blue);
 }
 
 .trouble {

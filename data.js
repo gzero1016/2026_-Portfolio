@@ -4,19 +4,12 @@ export const profile = {
   name: "박지영",
   nameEn: "Jiyoung Park",
   role: "풀스택 개발자",
-  headline: ["사용자의 업무를 이해하고", "끝까지 만드는 개발자"],
+  headline: ["업무를 이해하고", "시간과 비용을 줄여주는 개발자"],
   intro:
-    "SI 프로젝트를 거쳐 지금은 사내 ERP · MES · SCM을 개발하고 있습니다. 외주로 쓰던 SCM을 혼자 새로 만들어 연 2,000만 원의 유지보수비를 줄였고, 직접 기획한 물류 관리 서비스 QuickLab은 약 100명이 실제 업무에 쓰고 있습니다.",
+    "SI를 거쳐 지금은 사내 ERP · MES · SCM을 만듭니다. 외주로 쓰던 SCM을 혼자 새로 만들어 유지보수비를 연 2,000만 원 줄였고, 물류 관리 웹 서비스 QuickLab을 직접 기획 · 개발해 현재 약 100명이 실제 업무에 쓰고 있습니다.",
   email: "gzero1016@gmail.com",
   github: "https://github.com/gzero1016",
 };
-
-// 첫 화면 오른쪽 성과 카드 (맨 앞에 연차 카드가 자동으로 붙습니다)
-export const highlights = [
-  { value: "연 2,000만 원", label: "외주 SCM을 직접 교체해\n줄인 유지보수비" },
-  { value: "약 100명", label: "직접 만든 QuickLab의\n실사용자" },
-  { value: "3h → 20m", label: "QuickLab 도입 후\n정산 업무 시간" },
-];
 
 export const domains = [
   { name: "제조", items: ["ERP 영업 · 생산 · 구매 · 품질", "SCM · MES 개발과 운영", "LG 생산 현장 시스템 PFOS · GLAS"] },
@@ -28,6 +21,11 @@ export const domains = [
 // 섹션 제목 (\n 위치에서 줄이 바뀝니다)
 export const sections = {
   about: { eyebrow: "소개", title: "업무를 이해하고,\n끝까지 책임집니다" },
+  competencies: {
+    eyebrow: "핵심역량",
+    title: "실무에서 결과로\n증명한 역량입니다",
+    desc: "모든 역량은 실제 운영 중인 서비스에서 낸 결과를 근거로 정리했습니다.",
+  },
   experience: { eyebrow: "경력", title: "사무직에서 시작해\n개발자가 되었습니다" },
   projects: { eyebrow: "프로젝트", title: "직접 만들고,\n실제로 쓰이는 서비스" },
   others: "그 외 참여한 프로젝트",
@@ -65,6 +63,42 @@ export const about = [
   {
     title: "스택을 가리지 않습니다",
     body: "React · Spring Boot 웹 서비스부터 VB · C# 기반 ERP까지, 프로젝트와 회사 환경에 맞는 기술로 빠르게 적응해 일해 왔습니다.",
+  },
+];
+
+// 핵심역량 카드 — proofs의 value는 강조 숫자, label은 근거 설명
+export const competencies = [
+  {
+    title: "업무 도메인 분석과 DB 설계",
+    desc: "복잡하게 얽힌 실제 업무 구조를 먼저 정리하고, 그 구조가 그대로 드러나도록 데이터를 설계합니다.",
+    proofs: [
+      { value: "5단계", label: "업체 → 캠프 → 근무조 → 기사 → 노선 계층 설계 (QuickLab)" },
+      { value: "4개 도메인", label: "ERP 영업 · 생산 · 구매 · 품질 담당" },
+    ],
+  },
+  {
+    title: "SQL 튜닝과 성능 개선",
+    desc: "데이터가 쌓여 느려진 화면을 쿼리, 저장 프로시저, 인덱스 단위로 점검해 체감 속도를 끌어올립니다.",
+    proofs: [
+      { value: "20초 → 2초", label: "저장 프로시저 · 인덱스 재구성 (QuickLab)" },
+      { value: "30초 → 5초", label: "대용량 조회 쿼리 튜닝 (SCM)" },
+    ],
+  },
+  {
+    title: "기획부터 운영까지 1인 풀스택",
+    desc: "기획, 설계, 프론트엔드 · 백엔드 개발, 서버 구축과 배포, 운영 중 장애 대응까지 혼자 맡아 끝냅니다.",
+    proofs: [
+      { value: "17회", label: "운영 중 사용자 요청을 반영한 업데이트 (QuickLab)" },
+      { value: "2개 서비스", label: "QuickLab · SCM 모두 1인 개발로 실사용 안착" },
+    ],
+  },
+  {
+    title: "업무 자동화로 비용 · 시간 절감",
+    desc: "반복되는 수작업과 외부 의존을 시스템으로 바꿔, 현업이 바로 느끼는 시간과 비용을 줄입니다.",
+    proofs: [
+      { value: "3h → 20m", label: "엑셀 업로드 자동 정산 (QuickLab)" },
+      { value: "연 2,000만 원", label: "외주 SCM 내재화로 유지보수비 절감" },
+    ],
   },
 ];
 

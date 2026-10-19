@@ -2,10 +2,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import {
   profile,
-  highlights,
   domains,
   sections,
   about,
+  competencies,
   skills,
   experiences,
   featuredProjects,
@@ -17,6 +17,7 @@ import {
 
 const NAV = [
   { id: "about", label: "소개" },
+  { id: "competencies", label: "핵심역량" },
   { id: "experience", label: "경력" },
   { id: "projects", label: "프로젝트" },
   { id: "skills", label: "기술" },
@@ -163,25 +164,6 @@ function Hero() {
             </a>
           </div>
         </div>
-
-        <ul className="highlights hero-in">
-          <li className="is-blue">
-            <strong>{career.grade}년차</strong>
-            <span>
-              {profile.role}
-              <br />
-              개발 경력 {career.years}년 {career.months}개월
-            </span>
-          </li>
-          {highlights.map((h) => (
-            <li key={h.value}>
-              <strong>{h.value}</strong>
-              <span>
-                <Lines text={h.label} />
-              </span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
@@ -197,6 +179,33 @@ function About() {
             <div key={item.title} className="about-card reveal">
               <h3>{item.title}</h3>
               <p>{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Competencies() {
+  return (
+    <section className="section" id="competencies">
+      <div className="container">
+        <SectionHead {...sections.competencies} />
+        <div className="competencies">
+          {competencies.map((c, i) => (
+            <div key={c.title} className="competency reveal">
+              <span className="domain-no">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+              <ul className="competency-proofs">
+                {c.proofs.map((proof) => (
+                  <li key={proof.label}>
+                    <strong>{proof.value}</strong>
+                    <span>{proof.label}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -630,6 +639,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Competencies />
         <Experience />
         <Domains />
         <Projects onOpen={setOpenProject} />
