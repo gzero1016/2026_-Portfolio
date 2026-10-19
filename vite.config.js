@@ -15,3 +15,4 @@ export default defineConfig({
   ],
   base: '/2026_-Portfolio/',
 })
+

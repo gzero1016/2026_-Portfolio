@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+
+# 원본 캡처 (실명 포함) — 공개용은 public/images 에 따로 있습니다
+/SCM_*.png
+/QuickLab_*.png
+/Quicklab_*.png
